@@ -1,17 +1,14 @@
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { getPostData, getSortedPostsData } from "../../lib/posts";
 
-export default function example1({ post }) {
-  const router = useRouter();
-  const { id } = router.query;
-  console.log(post);
+export default function BlogPost({ post }) {
   return (
     <>
-      <p>Blogpost {id}</p>
+      <h1>{post.title}</h1>
+      <time dateTime={post.date}>{post.date}</time>
       <div dangerouslySetInnerHTML={{ __html: post.contentHtml }}></div>
       <Link href="/">
-        <a> Back Home </a>
+        <a>← Back Home </a>
       </Link>
     </>
   );
