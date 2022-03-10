@@ -1,6 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
 import { Post } from "../Post/Post";
+import Link from "next/link";
 
 export function PostList({ posts }) {
   return (
